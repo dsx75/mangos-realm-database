@@ -14,3 +14,9 @@ ALTER TABLE `account`
 
 ALTER TABLE `uptime`
   ADD CONSTRAINT `fk_uptime_realmlist` FOREIGN KEY (`realmid`) REFERENCES `realmlist` (`id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+
+/* Warden_Log.Account --> Account.ID */
+
+ALTER TABLE `warden_log`
+  ADD CONSTRAINT `fk_wardenlog_account` FOREIGN KEY (`account`) REFERENCES `account` (`id`) ON UPDATE CASCADE;
